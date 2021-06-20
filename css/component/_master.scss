@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======== Global Start ========= */
+html{
+	overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+a,
+a:hover {
+	text-decoration: none !important;
+}
+ul{
+    list-style-type: none;
+}
+
+
+
+@import'./container';
+/* ======== Global End ========= */

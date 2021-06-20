@@ -1,0 +1,30 @@
+.containers{
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+    //border: 1px solid red;
+}
+
+@mixin sm_container {
+    .containers{
+      max-width: 640px;
+    }
+}
+@mixin md_container {
+    .containers{
+      max-width: 800px;
+    }
+}
+@mixin lg_container {
+    .containers{
+      max-width: 1050px;
+    }
+}
+@mixin xl_container {
+    .containers{
+      max-width: 1240px;
+    }
+}
+

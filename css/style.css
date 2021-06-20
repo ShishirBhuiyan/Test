@@ -1,0 +1,147 @@
+:root {
+  --img_one: url("../image/okk.jpg");
+  --white: rgb(255, 255, 255);
+  --black:black;
+  --red: #d30015;
+  --yellow: #ffd700;
+  --blue: rgb(0, 26, 35);
+  --pink: rgb(107, 0, 45);
+  --pink1: rgb(54, 0, 22);
+  --indigo: #5e01f3;
+  --pest: #08e6d3;
+  --gray: #848ba0;
+  --dark-gray: #535353;
+  --color1:#5c86fd;
+  --color2: #bdaacc;
+  --color3: rgb(7, 16, 102);
+  --color4: #13203c;
+  --color5:rgba(255, 255, 255, 0.15);
+  --rgb_one:rgba(0, 0, 0, 0) linear-gradient(to top, rgb(0, 4, 40), rgb(0, 4, 40)) repeat scroll 0% 0% !important;
+  --rgb_two:rgba(0, 0, 0, 0) linear-gradient(to top, rgb(0, 4, 40), rgb(0, 4, 40)) repeat scroll 0% 0% !important;
+  --zindex_top:3;
+  --zindex_mid:2;
+  --zindex_low:1;
+  --zindex_none:0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ======== Global Start ========= */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.containers {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ======== Global End ========= */
+.slider {
+  height: 70vh;
+  background-color: yellowgreen;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.slider img {
+  height: 70vh;
+}
+
+.slider .slick-prev, .slider .slick-next {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  top: 50%;
+  z-index: 3;
+  font-size: 30px;
+}
+
+.slider .slick-prev::before, .slider .slick-next::before {
+  font-family: "slick";
+  font-size: 30px;
+  line-height: 1;
+  color: #a50000;
+  opacity: 1;
+}
+
+.slider .slick-prev {
+  left: 5%;
+}
+
+.slider .slick-next {
+  right: 5%;
+}
+
+.sticky {
+  height: 30vh;
+  width: 100%;
+  z-index: 5;
+  border: 2px solid #f70606;
+  position: relative;
+  -webkit-transform: translateY(-30vh);
+          transform: translateY(-30vh);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.sticky.start {
+  position: fixed;
+  width: 95%;
+  margin: 0 auto;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* Media Query Start */
+@media screen and (min-width: 576px) {
+  .containers {
+    max-width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .containers {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .containers {
+    max-width: 1050px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .containers {
+    max-width: 1240px;
+  }
+}
+
+/* Media Query End */
+/*# sourceMappingURL=style.css.map */

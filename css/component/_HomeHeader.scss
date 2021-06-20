@@ -1,0 +1,59 @@
+
+    .slider{
+        height: 70vh;
+        background-color: yellowgreen;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        img{
+            height: 70vh;
+        }
+
+        .slick-prev, .slick-next {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            //background: red;
+            //color: black;
+            top: 50%;
+            z-index: 3;
+            font-size: 30px;
+            &::before{
+                font-family: "slick";
+                font-size: 30px;
+                line-height: 1;
+                color: rgb(165, 0, 0);
+                opacity: 1;
+            }
+        }
+
+        .slick-prev{
+            left: 5%;
+        }
+        .slick-next{
+            right: 5%;
+        }
+    }
+    .sticky{
+        height: 30vh;
+        width: 100%;
+        z-index: 5;
+        border: 2px solid rgb(247, 6, 6);
+        //background-color: rgb(245, 147, 0);
+        position: relative;
+        //top: -30vh;
+        transform: translateY(-30vh);
+        transition: transform .2s;
+    }
+    .sticky.start{
+        position: fixed;
+        width: 95%;
+        margin: 0 auto;
+        transform: translateY(0) !important;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    
