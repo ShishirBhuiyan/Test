@@ -67,6 +67,7 @@
     @mixin sm_sticky {
         .sticky{
           max-width: 640px;
+          padding-right:15px;
         }
     }
     @mixin md_sticky {
