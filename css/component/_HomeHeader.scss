@@ -44,11 +44,11 @@
         margin: 0 auto;
         padding: 0 15px;
         height: 30vh;
-        width: 100%;
+        //width: 100%;
         z-index: 5;
         //background-color: rgb(245, 147, 0);
         transform: translateY(-10px);
-        transition:  .3s;
+        transition: transform .3s;
         //border: 3px solid black;
         .data{
             height: 100%;
