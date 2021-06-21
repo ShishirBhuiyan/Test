@@ -7,7 +7,7 @@
         position: relative;
         img{
             height: 70vh;
-            //border: 2px solid #444;
+            border: 2px solid #444;
         }
 
         .slick-prev, .slick-next {
@@ -46,7 +46,7 @@
         padding-right:23px;
         padding-left:15px;
         height: 30vh;
-        //width: 100%;
+        width: 100%;
         z-index: 5;
         background-color: rgb(245, 147, 0);
         transform: translateY(0px);
@@ -55,7 +55,7 @@
         .data{
             height: 30vh;
             width: 100%;
-            //background-color: brown;
+            background-color: brown;
         }
     }
     .sticky.start{
