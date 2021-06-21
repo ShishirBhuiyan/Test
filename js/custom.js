@@ -36,7 +36,7 @@ $(document).ready(function() {
     }); */
   var ok = $(window).scrollTop();
     $(window).scroll(function(){
-        if($(window).scrollTop() >= 500){
+        if($(window).scrollTop() >= 200){
             $('.sticky').addClass('start');
         }else{
             $('.sticky').removeClass('start');

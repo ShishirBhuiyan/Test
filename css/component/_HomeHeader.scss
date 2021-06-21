@@ -66,23 +66,21 @@
     
     @mixin sm_sticky {
         .sticky{
-          max-width: 640px;
-          padding-right:15px;
-          padding-left:15px;
+          max-width: 610px;
         }
     }
     @mixin md_sticky {
         .sticky{
-          max-width: 800px;
+          max-width: 770px;
         }
     }
     @mixin lg_sticky {
         .sticky{
-          max-width: 1050px;
+          max-width: 1020px;
         }
     }
     @mixin xl_sticky {
         .sticky{
-          max-width: 1240px;
+          max-width: 1210px;
         }
     }
