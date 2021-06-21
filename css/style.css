@@ -108,6 +108,7 @@ ul {
 }
 
 .sticky .data {
+  position: initial;
   height: 30vh;
   width: 100%;
   background-color: brown;
