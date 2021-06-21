@@ -1,12 +1,13 @@
 
     .slider{
         height: 70vh;
-        background-color: yellowgreen;
+        //background-color: yellowgreen;
         width: 100%;
         z-index: 1;
         position: relative;
         img{
             height: 70vh;
+            border: 2px solid #444;
         }
 
         .slick-prev, .slick-next {
@@ -36,24 +37,48 @@
         }
     }
     .sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0 15px;
         height: 30vh;
         width: 100%;
         z-index: 5;
-        border: 2px solid rgb(247, 6, 6);
         //background-color: rgb(245, 147, 0);
-        position: relative;
-        //top: -30vh;
-        transform: translateY(-70vh);
-        transition: transform .2s;
+        transform: translateY(0px);
+        transition:  .3s;
+        //border: 3px solid black;
+        .data{
+            height: 100%;
+            width: 100%;
+            background-color: brown;
+        }
     }
     .sticky.start{
-        position: fixed;
-        width: 95%;
-        margin: 0 auto;
-        transform: translateY(0) !important;
-        left: 0;
-        right: 0;
-        top: 0;
+        height: 35vh;
+        transform: translateY(0px);
     }
 
     
+    @mixin sm_sticky {
+        .sticky{
+          max-width: 640px;
+        }
+    }
+    @mixin md_sticky {
+        .sticky{
+          max-width: 800px;
+        }
+    }
+    @mixin lg_sticky {
+        .sticky{
+          max-width: 1050px;
+        }
+    }
+    @mixin xl_sticky {
+        .sticky{
+          max-width: 1240px;
+        }
+    }

@@ -52,12 +52,12 @@ ul {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  border: 1px solid red;
 }
 
 /* ======== Global End ========= */
 .slider {
   height: 70vh;
-  background-color: yellowgreen;
   width: 100%;
   z-index: 1;
   position: relative;
@@ -65,6 +65,7 @@ ul {
 
 .slider img {
   height: 70vh;
+  border: 2px solid #444;
 }
 
 .slider .slick-prev, .slider .slick-next {
@@ -94,33 +95,39 @@ ul {
 }
 
 .sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 15px;
   height: 30vh;
   width: 100%;
   z-index: 5;
-  border: 2px solid #f70606;
-  position: relative;
-  -webkit-transform: translateY(-70vh);
-          transform: translateY(-70vh);
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.sticky .data {
+  height: 100%;
+  width: 100%;
+  background-color: brown;
 }
 
 .sticky.start {
-  position: fixed;
-  width: 95%;
-  margin: 0 auto;
-  -webkit-transform: translateY(0) !important;
-          transform: translateY(0) !important;
-  left: 0;
-  right: 0;
-  top: 0;
+  height: 35vh;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 /* Media Query Start */
 @media screen and (min-width: 576px) {
   .containers {
+    max-width: 640px;
+  }
+  .sticky {
     max-width: 640px;
   }
 }
@@ -129,16 +136,25 @@ ul {
   .containers {
     max-width: 800px;
   }
+  .sticky {
+    max-width: 800px;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .containers {
     max-width: 1050px;
   }
+  .sticky {
+    max-width: 1050px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .containers {
+    max-width: 1240px;
+  }
+  .sticky {
     max-width: 1240px;
   }
 }
