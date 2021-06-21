@@ -47,7 +47,7 @@
         width: 100%;
         z-index: 5;
         padding: 0;
-        transform: translateY(-15px);
+        //transform: translateY(-15px);
         transition: all 650ms ease-in-out;
         .data{
             position: relative;
@@ -60,7 +60,7 @@
     .sticky.start{
         //background-color: rgb(245, 147, 0);
         background-color: rgb(94, 1, 1);
-        transform: translateY(0px);
+        //transform: translateY(0px);
     }
 
     

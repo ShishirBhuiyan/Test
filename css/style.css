@@ -102,8 +102,6 @@ ul {
   width: 100%;
   z-index: 5;
   padding: 0;
-  -webkit-transform: translateY(-15px);
-          transform: translateY(-15px);
   -webkit-transition: all 650ms ease-in-out;
   transition: all 650ms ease-in-out;
 }
@@ -118,8 +116,6 @@ ul {
 
 .sticky.start {
   background-color: #5e0101;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
 }
 
 /* Media Query Start */
