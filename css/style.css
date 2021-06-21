@@ -99,8 +99,8 @@ ul {
   z-index: 5;
   border: 2px solid #f70606;
   position: relative;
-  -webkit-transform: translateY(-30vh);
-          transform: translateY(-30vh);
+  -webkit-transform: translateY(-70vh);
+          transform: translateY(-70vh);
   -webkit-transition: -webkit-transform .2s;
   transition: -webkit-transform .2s;
   transition: transform .2s;
