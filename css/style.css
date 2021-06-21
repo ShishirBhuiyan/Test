@@ -100,7 +100,6 @@ ul {
   margin-left: auto;
   height: 30vh;
   width: 100%;
-  z-index: 5;
   padding: 0;
   -webkit-transition: .3s;
   transition: .3s;
@@ -116,6 +115,7 @@ ul {
 
 .sticky.start {
   background-color: #5e0101;
+  z-index: 5;
 }
 
 /* Media Query Start */
