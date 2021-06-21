@@ -1,93 +1,608 @@
 
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .slider{
         height: 30vh;
-        //background-color: yellowgreen;
         width: 100%;
         z-index: 1;
         position: relative;
-        img{
-            height: 30vh;
-            //border: 2px solid #444;
-        }
-
-        .slick-prev, .slick-next {
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            cursor: pointer;
-            //background: red;
-            //color: black;
-            top: 50%;
-            z-index: 3;
-            font-size: 30px;
-            &::before{
-                font-family: "slick";
-                font-size: 30px;
-                line-height: 1;
-                color: rgb(165, 0, 0);
-                opacity: 1;
+        .slickItem{
+            height: 100%;
+            width: 100%;
+            img{
+                height: 30vh;
+                width: 100%;
             }
         }
 
-        .slick-prev{
-            left: 5%;
+        .slick-prev, .slick-next {
+            display: none !important;
+        }        
+        .prev,.next {
+            position: absolute;
+            cursor: pointer;
+            top: 45%;
+            z-index: 3;
+            font-size: 40px;
+            height: 50px;
+            width: 40px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i{
+                color: white;
+            }
         }
-        .slick-next{
-            right: 5%;
+
+        .prev{
+            left: 0%;
+        }
+        .next{
+            right: 0%;
+        }
+
+        /*&::after{
+            content: "";
+           position: absolute;
+           height: 100%;
+           width: 100%;
+           background-color: black;
+           opacity: 0.5;
+           top: 0;
+           left: 0;
+           bottom: 0;right: 0;
+        }*/
+    }
+}
+
+.sticky{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    .image{
+        position: absolute;
+        left: 5%;
+        top:0px;
+        img{
+            height: 70px;
+            width: 70px;
+            display: block;
+        } 
+    }
+    .heighlight{
+        width: 90%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(128, 128, 243);
+        .text{
+            flex: 0 0 30%;
+            max-width: 30%;
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                display: none;
+            }
+        }
+        .toggles{
+            flex: 0 0 10%;
+            max-width: 10%;
+            height: 35px;
+            width: 35px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 650ms;
+            margin-left: 50px;
+            .line,
+            .line:before,
+            .line:after{
+                height: 3px;
+                width: 25px;
+                border-radius: 20px;
+                transition: .5s;
+                position: relative;
+                background-color: rgb(255, 255, 255);
+            }
+            .line:before{
+                content: "";
+                position: absolute;
+                transform: translateY(-7px);
+            }
+             
+            .line:after{
+                content: "";
+                right: 0;
+                position: absolute;
+                transform: translateY(7px);
+            }
+             
+            .line.active{
+                transform: translateX(-30px);
+                background-color: transparent;
+                box-shadow: unset;
+            }
+             
+            .line.active:before{
+                transform: rotate(45deg) translate(22px, -22px);
+            }
+            .line.active:after{
+                transform: rotate(-45deg) translate(22px, 22px);
+            }
         }
     }
-    .sticky{
-        position: fixed;
-        top: 0;
+    .navigation{
+        //position: absolute;
+        //top: 100%;
+        width: 100%;
         left: 0;
         right: 0;
-        margin-right:auto;
-        margin-left:auto;
-        height: 30vh;
-        width: 100%;
-        padding: 0;
-        //transform: translateY(-15px);
-        transition: .3s;
-        .data{
-            position: relative;
-            height: 30vh;
-            width: 100%;
-            background-color: transparent;
-            margin: 0 auto;
+        //transform: translateY(20px);
+        //opacity: 0;
+        transition: display .3s;
+        //pointer-events: none;
+        display: none;
+        .nav{
+            cursor: pointer;
+            //background-color: rgb(48, 48, 48);
+            color: rgb(255, 0, 0);
+            .start{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                transition: .75s;
+                .links{
+                    flex: initial;
+                    width: 100%;
+                    .nav-ul{
+                        flex-direction: column;
+                        .nav-links{
+                            width: 100%;
+                            background-color: #032b43;
+                            border-bottom: 1px solid #fff;
+                            transition: .3s;
+                            a{
+                                padding:7px 10px;
+                                letter-spacing: 1px;
+                                font-size: 17px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                transition: .5s;
+                                position: relative;
+                                span{
+                                    color: #fff;
+                                }
+                                i{
+                                    position: absolute;
+                                    color: #032b43;
+                                    right: 12px;
+                                    transition: all 650ms;
+                                    transform: rotate(0deg);
+                                    z-index: 2;
+                                }
+                            }
+                            &:hover{
+                                background-color: #021b2b;
+                            }
+                        }
+                        .nav-links.dropdown{
+                            overflow: hidden;
+                            .span-arrow{
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    line-height: 2.8rem;
+                                    height: 100%;
+                                    width: 40px;
+                                    background-color:#fff;
+                                    z-index: 1;
+                                }
+                                i.change{
+                                    transform: rotate(-180deg);
+                                }
+    
+                            }
+                            .dropdown-ul.primary{
+                                height: 0;
+                                transition: .3s ease-in;
+                                transform: translateX(-100%);
+                                .dropdown-link{
+                                    &:hover{
+                                        background-color: #02233a;
+                                    }
+                                    width: 100%;
+                                    background-color: #021b2b;
+                                    padding-left: 15px;
+                                    border-top: 1px solid #fff;
+                                    transition: .3s;
+                                    .span-arrow{
+                                        padding:7px 10px;
+                                        letter-spacing: 1px;
+                                        font-size: 17px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        transition: .5s;
+                                        position: relative;
+                                        span{
+                                            color: #fff;
+                                        }
+                                        i{
+                                            position: absolute;
+                                            color: #032b43;
+                                            right: 12px;
+                                            transition: all 650ms;
+                                            transform: rotate(0deg);
+                                            z-index: 2;
+                                        }
+                                        i.change{
+                                            transform: rotate(-180deg);
+                                        }
+                                    }
+                                }
+                                .dropdown-link.dropdown{
+                                    .dropdown-ul.secondary{
+                                        height: 0;
+                                        transition: .3s ease-in;
+                                        transform: translateX(100%);
+                                        margin-left: -15px !important;
+                                        .dropdown-link{
+                                            padding-left: 40px;
+                                            background-color: #011624;
+                                        }
+                                    }
+    
+                                    .dropdown-ul.secondary.active{
+                                        height: 100%;
+                                        transform: translateX(0%);
+                                    }
+                                }
+                            }
+                            .dropdown-ul.primary.active{
+                                height: 100%;
+                                transform: translateX(0%);
+                            }
+    
+    
+                        }
+                    }
+                }
+                .login{
+                    width: 100%;
+                    background-color: #032b43;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid #fff;
+                    .btn{
+                        display: inline-block;
+                        padding: .5rem 1.3rem;
+                        font-size: .8rem;
+                        border: 2px solid #fff;
+                        border-radius: 2rem;
+                        line-height: 1;
+                        margin: 0 .2rem;
+                        transition: .3s;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-weight: bold;
+                        &:hover{
+                            color: #032b43;
+                            background-color: #fff;
+                            border: 2px solid #032b43;
+                        }
+                    }
+                        
+                    .btn.solid, .btn.transparent:hover{
+                        background-color: #fff;
+                        color: cyan;
+                    }
+                    
+                    .btn.transparent, .btn.solid:hover{
+                        background-color: transparent;
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
-    .sticky.start{
-        //background-color: rgb(245, 147, 0);
-        background-color: rgb(94, 1, 1);
-        z-index: 5;
-        //transform: translateY(0px);
-    }
+}
 
     
-    @mixin sm_sticky {
-        
+@mixin sm_header {
+    
     .slider{
         height: 70vh;
         img{
             height: 70vh;
         }
     }
-        .sticky{
-          max-width: 610px;
+}
+@mixin md_header {
+}
+@mixin lg_header {
+    .flex{
+        .slider{
+            z-index: 20;
+            order: 2;
+            height: 50vh;
+            .slickItem{
+                img{
+                    height: 50vh;
+                }
+            }
         }
     }
-    @mixin md_sticky {
-        .sticky{
-          max-width: 770px;
+    .sticky{
+        .image{
+            position: absolute;
+            left: 10%;
+            bottom: 0;
+            z-index: 2;
+            img{
+                height: 100px;
+                width: 100px;
+                display: block;
+                z-index: 5;
+            } 
+        }
+        .header{
+            .text{
+                h2{
+                    display: none;
+                }
+                img{
+                    height: 100px;
+                    width: 100px;
+                    display: block;
+                    z-index: 5;
+                }
+            }
+        }
+        .navigation{
+            width: 100%;
+            height: 40px;
+            display: block;
+            z-index: 4;
+            .nav{
+                cursor: pointer;
+                .start{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    transition: .75s;
+                    height: 40px;
+                    background-color: #032b43;
+                    .links{
+                        padding-left: 10%;
+                        flex: unset;
+                        width: 70%;
+                        flex: 0 0 70%;
+                        max-width: 70%;
+                        height: 100%;
+                        z-index: 4;
+                        .nav-ul{
+                            height: 40px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            .nav-links{
+                                height: 40px;
+                                border: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background: none;
+                                a{
+                                    padding:7px 10px;
+                                    letter-spacing: 1px;
+                                    font-size: 17px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    transition: .5s;
+                                    position: relative;
+                                    span{
+                                        color: #fff;
+                                    }
+                                    i{
+                                        position: absolute;
+                                        color: #ffffff;
+                                        right: 12px;
+                                        transition: all 650ms;
+                                        transform: rotate(0deg);
+                                        z-index: 2;
+                                    }
+                                }
+                                &:hover{
+                                    background-color: #021b2b;
+                                }
+                            }
+                            .nav-links.dropdown{
+                                overflow: visible;
+                                position: relative;
+                                .span-arrow{
+                                    width: 100%;
+                                    &::after{
+                                        display: none;
+                                    }
+                                    i.change{
+                                        transform: rotate(-180deg);
+                                    }
+    
+                                }
+                                .dropdown-ul.primary{
+                                    position: absolute;
+                                    bottom: -15px;
+                                    left: 0;
+                                    transition: .3s ease-in;
+                                    transform: translateX(0%);
+                                    z-index: -1;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                    .dropdown-link{
+                                        a{
+                                            padding: 0;
+                                            width: 150px;
+                                            padding: 7px 12px;
+                                        }
+                                        &:hover{
+                                            background-color: #02233a;
+                                        }
+                                        width: 100%;
+                                        background-color: #021b2b;
+                                        padding-left: 0px;
+                                        border-top: 1px solid #fff;
+                                        transition: .3s;
+                                        .span-arrow{
+                                            padding:0px;
+                                            width: 150px;
+                                            padding: 7px 12px;
+                                            letter-spacing: 1px;
+                                            font-size: 17px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            transition: .5s;
+                                            position: relative;
+                                            span{
+                                                color: #fff;
+                                            }
+                                            i{
+                                                position: absolute;
+                                                color: #feffff;
+                                                right: 12px;
+                                                transition: all 650ms;
+                                                transform: rotate(-90deg);
+                                                z-index: 2;
+                                            }
+                                            i.change{
+                                                transform: rotate(-180deg);
+                                            }
+                                        }
+                                        &:hover > .span-arrow > i{
+                                            transform: rotate(-450deg);
+                                        }
+                                    }
+                                    .dropdown-link.dropdown{
+                                        position: relative;
+                                        .dropdown-ul.secondary{
+                                            position: absolute;
+                                            top: -100%;
+                                            height: 0;
+                                            transition: .3s ease-in;
+                                            transform: translateX(105%);
+                                            margin-left:0px !important;
+                                            z-index: -1;
+                                            opacity: 0;
+                                            pointer-events: none;
+                                            .dropdown-link{
+                                                padding-left: 0px;
+                                                background-color: #011624;
+                                                a{
+                                                    width: 150px;
+                                                    padding: 6px 12px; 
+                                                }
+                                            }
+                                        }
+    
+                                        .dropdown-ul.secondary.active{
+                                            height: 100%;
+                                            transform: translateX(105%);
+                                            z-index: -1;
+                                            opacity: 0;
+                                            pointer-events: none;
+                                        }
+
+                                        &:hover .dropdown-ul.secondary{ 
+                                            height: 100%;
+                                            transform: translateX(100%);
+                                            z-index: 1;
+                                            opacity: 1;
+                                            pointer-events: painted;
+                                        }
+                                    }
+                                }
+                                .dropdown-ul.primary.active{
+                                    height: 100%;
+                                    bottom: -36px;
+                                    z-index: -1;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                }
+
+
+                                &:hover .span-arrow i{
+                                    transform: rotate(-180deg);
+                                }
+                                &:hover .dropdown-ul.primary{
+                                    height: 100%;
+                                    bottom: -36px;
+                                    z-index: 1;
+                                    opacity: 1;
+                                    pointer-events: painted;
+                                }
+                            }
+                        }
+                    }
+                    .login{
+                        height: 40px;
+                        width: 10%;
+                        flex: 0 0 10%;
+                        max-width: 10%;
+                        background-color: #032b43;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        padding: 0 !important;
+                        .btn{
+                            &:hover{
+                                color: #032b43;
+                                background-color: #fff;
+                                border: 2px solid #032b43;
+                            }
+                        }
+                            
+                        .btn.solid, .btn.transparent:hover{
+                            background-color: #fff;
+                            color: cyan;
+                        }
+                        
+                        .btn.transparent, .btn.solid:hover{
+                            background-color: transparent;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
         }
     }
-    @mixin lg_sticky {
-        .sticky{
-          max-width: 1020px;
-        }
-    }
-    @mixin xl_sticky {
-        .sticky{
-          max-width: 1210px;
-        }
-    }
+}
+@mixin xl_header {
+}

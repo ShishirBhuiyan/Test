@@ -4,16 +4,19 @@
 // Owl Carousel Start..................
 $(document).ready(function() {
  
-
-
-/*     $('.ok').click(function(){
-        $('.navigation').toggleClass('open');
+    $('.ok').click(function(){
+        $('.navigation').slideToggle();
         $(".toggles .line").toggleClass("active");
     }); 
 
+
+
+var width = $(window).width();
+if(width < 700){
     $('.normal').click(function(){
 
-        $('.navigation').toggleClass('open');
+        $('.navigation').slideToggle();
+        $(".toggles .line").toggleClass("active");
 
         if(this.parentElement){
             $(this.parentElement).toggleClass('active');
@@ -28,39 +31,25 @@ $(document).ready(function() {
             }
         }
     });
-
-
     $(".span-arrow").click(function(){
        $(this.lastElementChild).toggleClass('change');
        $(this.nextElementSibling).toggleClass('active');
-    }); */
-  var ok = $(window).scrollTop();
-    $(window).scroll(function(){
-        if($(window).scrollTop() >= 200){
-            $('.sticky').addClass('start');
-        }else{
-            $('.sticky').removeClass('start');
-        }
-    })
+    });
+}
 
 
-    $('.slider').slick({
+
+
+    $('.content').slick({
         //dots: true,
         infinite: true,
-        //speed: 500,
         fade: true,
         cssEase: 'linear',
         autoplay: true,
         autoplaySpeed: 3500,
+        prevArrow:'.prev',
+        nextArrow:'.next'
         
-    });
-
-    $('.fade').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear'
     });
 
 });
