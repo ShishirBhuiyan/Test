@@ -48,10 +48,6 @@
         height: 30vh;
         width: 100%;
         z-index: 5;
-        background-color: rgb(245, 147, 0);
-        transform: translateY(0px);
-        transition: transform .3s;
-        //border: 3px solid black;
         .data{
             height: 30vh;
             width: 100%;
@@ -59,8 +55,7 @@
         }
     }
     .sticky.start{
-        //height: 35vh;
-        transform: translateY(0px);
+        background-color: rgb(245, 147, 0);
     }
 
     

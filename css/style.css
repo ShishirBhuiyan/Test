@@ -105,13 +105,6 @@ ul {
   height: 30vh;
   width: 100%;
   z-index: 5;
-  background-color: #f59300;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
 }
 
 .sticky .data {
@@ -121,8 +114,7 @@ ul {
 }
 
 .sticky.start {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  background-color: #f59300;
 }
 
 /* Media Query Start */
