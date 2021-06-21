@@ -43,20 +43,24 @@
         right: 0;
         margin-right:auto;
         margin-left:auto;
-        padding-right:23px;
-        padding-left:15px;
         height: 30vh;
         width: 100%;
         z-index: 5;
+        padding: 0;
+        transform: translateY(-15px);
+        transition: all 650ms ease-in-out;
         .data{
-            position: initial;
+            position: relative;
             height: 30vh;
             width: 100%;
-            background-color: brown;
+            background-color: transparent;
+            margin: 0 auto;
         }
     }
     .sticky.start{
-        background-color: rgb(245, 147, 0);
+        //background-color: rgb(245, 147, 0);
+        background-color: rgb(94, 1, 1);
+        transform: translateY(0px);
     }
 
     
@@ -64,6 +68,7 @@
         .sticky{
           max-width: 640px;
           padding-right:15px;
+          padding-left:15px;
         }
     }
     @mixin md_sticky {

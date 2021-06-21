@@ -48,8 +48,6 @@ ul {
 
 .containers {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   border: 1px solid red;
@@ -100,32 +98,41 @@ ul {
   right: 0;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 23px;
-  padding-left: 15px;
   height: 30vh;
   width: 100%;
   z-index: 5;
+  padding: 0;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-transition: all 650ms ease-in-out;
+  transition: all 650ms ease-in-out;
 }
 
 .sticky .data {
-  position: initial;
+  position: relative;
   height: 30vh;
   width: 100%;
-  background-color: brown;
+  background-color: transparent;
+  margin: 0 auto;
 }
 
 .sticky.start {
-  background-color: #f59300;
+  background-color: #5e0101;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 /* Media Query Start */
 @media screen and (min-width: 576px) {
   .containers {
+    padding-right: 15px;
+    padding-left: 15px;
     max-width: 640px;
   }
   .sticky {
     max-width: 640px;
     padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
