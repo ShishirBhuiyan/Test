@@ -68,6 +68,86 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 1px;
+  overflow: hidden;
+}
+
+.flex .importantLinks {
+  height: 40px;
+  width: 100%;
+  background-color: #4d0300;
+  position: relative;
+}
+
+.flex .importantLinks .links {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 5px;
+}
+
+.flex .importantLinks .links i {
+  color: #000;
+  font-size: 15px;
+  margin: 0 5px;
+}
+
+.flex .importantLinks .links i:hover {
+  color: #fff;
+}
+
+.flex .importantLinks .search {
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.flex .importantLinks .search .input, .flex .importantLinks .search .btn {
+  padding: 5px;
+  border-radius: 0;
+  border: none;
+}
+
+.flex .importantLinks .search .btn {
+  cursor: pointer;
+}
+
+.flex .importantLinks .search.show {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.flex .importantLinks .event .image {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 2%;
+  height: 100%;
+  z-index: 50;
+}
+
+.flex .importantLinks .event .image img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 
 .flex .slider {
@@ -75,17 +155,6 @@ ul {
   width: 100%;
   z-index: 1;
   position: relative;
-  /*&::after{
-            content: "";
-           position: absolute;
-           height: 100%;
-           width: 100%;
-           background-color: black;
-           opacity: 0.5;
-           top: 0;
-           left: 0;
-           bottom: 0;right: 0;
-        }*/
 }
 
 .flex .slider .slickItem {
@@ -99,6 +168,40 @@ ul {
   width: 100%;
 }
 
+.flex .slider .slickItem .text {
+  display: block;
+  position: absolute;
+  width: 230px;
+  color: #fff;
+  top: 160px;
+  left: 16px;
+  background-color: black;
+  opacity: 0.5;
+  padding: 3px 10px;
+}
+
+.flex .slider .slickItem .text h2 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.flex .slider .slickItem .text .reds {
+  height: 3px;
+  background-color: #610b00;
+  width: 150px;
+  margin: 5px 0;
+}
+
+.flex .slider .slickItem .text p {
+  display: none;
+}
+
+.flex .slider .slickItem.slick-active .text {
+  -webkit-animation: fadeInUp ease 2s;
+          animation: fadeInUp ease 2s;
+  opacity: 0.8 !important;
+}
+
 .flex .slider .slick-prev, .flex .slider .slick-next {
   display: none !important;
 }
@@ -108,9 +211,9 @@ ul {
   cursor: pointer;
   top: 45%;
   z-index: 3;
-  font-size: 18px;
-  height: 30px;
-  width: 30px;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,6 +236,19 @@ ul {
 
 .flex .slider .next {
   right: 0%;
+}
+
+.flex .slider::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .sticky {
@@ -352,7 +468,7 @@ ul {
 
 .sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links {
   width: 100%;
-  background-color: #032b43;
+  background-color: #031926;
   border-bottom: 1px solid #fff;
   -webkit-transition: .3s;
   transition: .3s;
@@ -555,6 +671,18 @@ ul {
     padding-left: 15px;
     max-width: 640px;
   }
+  .flex .importantLinks .links {
+    margin-left: 10%;
+  }
+  .flex .slider .slickItem .text {
+    width: 350px;
+    left: 30px;
+    padding: 10px;
+    top: 140px;
+  }
+  .flex .slider .slickItem .text h2 {
+    font-size: 20px;
+  }
   .sticky .containers .holder .image {
     left: 5%;
   }
@@ -573,6 +701,20 @@ ul {
 @media screen and (min-width: 768px) {
   .containers {
     max-width: 800px;
+  }
+  .flex .slider .slickItem .text {
+    width: 350px;
+    top: 110px;
+    left: 50px;
+  }
+  .flex .slider .slickItem .text h2 {
+    color: #fff;
+  }
+  .flex .slider .slickItem .text .reds {
+    width: 150px;
+  }
+  .flex .slider .slickItem .text p {
+    display: block;
   }
   .sticky .containers .holder .image {
     left: 7%;
@@ -602,10 +744,27 @@ ul {
   .flex .slider .slickItem img {
     height: 60vh;
   }
+  .flex .slider .slickItem .text {
+    top: 315px;
+    left: 200px;
+  }
+  .flex .slider .slickItem .text h2 {
+    color: #fff;
+  }
   .flex .slider .prev, .flex .slider .next {
-    font-size: 25px;
-    height: 40px;
-    width: 40px;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+  }
+  .flex .importantLinks {
+    height: 50px;
+  }
+  .flex .importantLinks .links {
+    margin-left: 10%;
+  }
+  .flex .importantLinks .event .image img {
+    height: 100px;
+    width: 100px;
   }
   .sticky .containers .holder .image {
     left: 5%;

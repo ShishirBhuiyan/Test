@@ -9,7 +9,9 @@ $(document).ready(function() {
         $(".toggles .line").toggleClass("active");
     }); 
 
-
+    $('.searchquery').click(function(){
+        $(".search").toggleClass("show");
+    }); 
 
 var width = $(window).width();
 if(width < 700){
@@ -46,7 +48,7 @@ if(width < 700){
         fade: true,
         cssEase: 'linear',
         autoplay: true,
-        autoplaySpeed: 3500,
+        autoplaySpeed: 7000,
         prevArrow:'.prev',
         nextArrow:'.next'
         
