@@ -135,10 +135,6 @@ ul {
           transform: translateX(0%);
 }
 
-.flex .importantLinks .event {
-  display: none;
-}
-
 .flex .importantLinks .event .image {
   cursor: pointer;
   position: absolute;
