@@ -21,12 +21,13 @@
           align-items: center;
           justify-content: center;
           padding-left: 5px;
+          color: #fff;
           i{
-             color: #000;
              font-size: 15px;
              margin: 0 5px;
+             transition: .3s;
              &:hover{
-                 color: #fff;
+                 margin-left: 10px;
              }
           }
         }
@@ -210,7 +211,7 @@
                     flex: 0 0 80%;
                     max-width: 80%;
                     text-align: center;
-                    padding-left: 20px;
+                    padding-left: 22%;
                     h2{
                         display: none;
                         font-size: 15px;
@@ -277,7 +278,7 @@
                 //opacity: 0;
                 transition: display .3s;
                 //pointer-events: none;
-                display: none;
+                display: block;
                 .nav{
                     cursor: pointer;
                     //background-color: rgb(48, 48, 48);
@@ -399,6 +400,51 @@
                                             }
                                         }
                                     }
+                                    .dropdown-ul.primary.mega{
+                                        .top{
+                                            //height: 300px;
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
+                                            .first,.second{
+                                               height: 100%;
+                                               width: 100%;
+                                               display: flex;
+                                               align-items: center;
+                                               justify-content: space-between;
+                                               .one,.two{
+                                                border: 1px solid #fff;
+                                                width: 100%;
+                                                height: 100%;
+                                                ul{
+                                                    li{
+                                                        padding: 0 15px;
+                                                        background-color: #470000;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        color: #fff;
+                                                        i{
+                                                            color: rgb(255, 255, 255);
+                                                        }
+                                                        a{
+                                                           color: #fff;
+                                                        }
+                                                        &:hover a{
+                                                            text-decoration: underline !important;
+                                                        }
+                                                    }
+                                                }
+                                               }
+                                            }
+                                        }
+                                        .bottom{
+                                            height: 60px;
+                                            width: 100%;
+                                            background-color: rgb(117, 0, 55);
+                                        }
+                                    }
                                     .dropdown-ul.primary.active{
                                         height: 100%;
                                         transform: translateX(0%);
@@ -482,7 +528,10 @@
                 }
                 .header{
                     .text{
-                        text-align: right;
+                        flex: 0 0 90%;
+                        max-width: 90%;
+                        padding-left: 17%;
+                        text-align: center;
                         h1{
                             display: none;
                         }
@@ -530,7 +579,6 @@
                 }
                 .header{
                     .text{
-                        padding-left: 0px !important;
                         h2{
                             font-size: 25px;
                         } 
@@ -650,24 +698,25 @@
                                         border: none;
                                         display: flex;
                                         align-items: center;
-                                        justify-content: center;
+                                        justify-content: space-around;
                                         background: none;
+                                        padding:7px 5px;
                                         a{
-                                            padding:7px 10px;
                                             letter-spacing: 1px;
-                                            font-size: 17px;
+                                            font-size: 14px;
                                             display: flex;
                                             align-items: center;
                                             justify-content: space-between;
                                             transition: .5s;
                                             position: relative;
+                                            padding: 0;
                                             span{
                                                 color: #fff;
                                             }
                                             i{
                                                 position: absolute;
                                                 color: #ffffff;
-                                                right: 12px;
+                                                right: 0px;
                                                 transition: all 650ms;
                                                 transform: rotate(0deg);
                                                 z-index: 2;
@@ -789,7 +838,32 @@
                                             opacity: 0;
                                             pointer-events: none;
                                         }
-        
+                                        .dropdown-ul.primary.mega{
+                                            height: 100% !important;
+                                            transform: translateX(-20%) !important;
+                                            width: 600px;
+                                            .top{
+                                                .first,.second{
+                                                   .one,.two{
+                                                    ul{
+                                                        li{
+                                                            padding: 5px 15px;
+                                                            i{
+                                                            }
+                                                            a{
+                                                               margin-left: 10px;
+                                                            }
+                                                        }
+                                                    }
+                                                   }
+                                                }
+                                            }
+                                            .bottom{
+                                                height: 60px;
+                                                width: 100%;
+                                                background-color: rgb(117, 0, 55);
+                                            }
+                                        }
         
                                         &:hover .span-arrow i{
                                             transform: rotate(-180deg);
