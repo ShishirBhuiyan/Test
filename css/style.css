@@ -427,6 +427,8 @@ ul {
   right: 0;
   -webkit-transition: display .3s;
   transition: display .3s;
+  pointer-events: painted;
+  z-index: 500;
   display: block;
 }
 
@@ -474,6 +476,8 @@ ul {
   border-bottom: 1px solid #fff;
   -webkit-transition: .3s;
   transition: .3s;
+  z-index: 500 !important;
+  pointer-events: painted !important;
 }
 
 .sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links a {
@@ -492,10 +496,16 @@ ul {
   -webkit-transition: .5s;
   transition: .5s;
   position: relative;
+  z-index: 500 !important;
+  pointer-events: painted !important;
 }
 
 .sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links a span {
   color: #fff;
+}
+
+.sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links a span:hover {
+  color: chartreuse;
 }
 
 .sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links a i {
@@ -514,6 +524,8 @@ ul {
 }
 
 .sticky .containers .holder .navigation .nav .start .links .nav-ul .nav-links.dropdown {
+  z-index: 500 !important;
+  pointer-events: painted !important;
   overflow: hidden;
 }
 

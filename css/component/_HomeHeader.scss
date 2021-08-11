@@ -161,7 +161,7 @@
         .holder{
             height: 70px;
             position: relative;
-            background-color: rgb(71, 0, 0);
+            background-color: rgb(173, 15, 15);
             .image{
                 position: absolute;
                 left: 0;
@@ -277,7 +277,8 @@
                 //transform: translateY(20px);
                 //opacity: 0;
                 transition: display .3s;
-                //pointer-events: none;
+                pointer-events: painted;
+                z-index: 500;
                 display: block;
                 .nav{
                     cursor: pointer;
@@ -300,6 +301,8 @@
                                     background-color: #031926;
                                     border-bottom: 1px solid #fff;
                                     transition: .3s;
+                                    z-index: 500 !important;
+                                    pointer-events:painted !important;
                                     a{
                                         padding:7px 10px;
                                         letter-spacing: 1px;
@@ -309,8 +312,13 @@
                                         justify-content: space-between;
                                         transition: .5s;
                                         position: relative;
+                                        z-index: 500 !important;
+                                        pointer-events:painted !important;
                                         span{
                                             color: #fff;
+                                            &:hover{
+                                                color: chartreuse;
+                                            }
                                         }
                                         i{
                                             position: absolute;
@@ -326,6 +334,8 @@
                                     }
                                 }
                                 .nav-links.dropdown{
+                                    z-index: 500 !important;
+                                    pointer-events:painted !important;
                                     overflow: hidden;
                                     .span-arrow{
                                         &::after{
@@ -497,6 +507,7 @@
         }
     }
 }
+
 
     
 @mixin sm_header {
